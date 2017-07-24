@@ -16,7 +16,7 @@ public class FindElementFromEndNv2 {
             this.iterator = iterator;
         }
 
-        public int getElementFromTheEnd(ArrayList<Integer> list, int endIndex) {
+        public int getElementFromTheEnd(int endIndex) {
             // your code here
             int count =0;
             int k = 0;
