@@ -7,9 +7,11 @@ import java.util.List;
  */
 public class Box {
 
-    List<Integer> list = new ArrayList(5);
+
 
     Factory ff = new Factory();
+
+    List<Integer> list = new ArrayList(ff.capasity);
 
     int capasity = ff.capasity;
 
