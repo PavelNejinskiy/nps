@@ -8,7 +8,7 @@ import java.util.List;
  * Created by pavel on 14/08/2017.
  */
 public class TwoBillion {
-    private static final String FAIL = "D:\\games\twobillion.txt";
+    private static final String FAIL = "D:\\games\\twobillion.txt";
     static String smbls = "0123456789abcdefghijklmnopqrstuvwxyz";
     static List<Character> list = new ArrayList();
 
@@ -22,9 +22,10 @@ public class TwoBillion {
 
     static void write() throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(FAIL));
+        Character str;
         if (!FAIL.isEmpty()) {
             for (int i = 0; i < list.size() - 1; i++) {
-                char str = list.get(i);
+                str = list.get(i);
                 writer.write(str);
             }
             writer.flush();
@@ -65,9 +66,10 @@ public class TwoBillion {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         File file = new File(FAIL);
         create(file);
+        write();
 
         readWithFileReader(file);
         System.out.println("");
