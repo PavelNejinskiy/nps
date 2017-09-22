@@ -2,35 +2,28 @@ package ProducerVSConsumer;
 
 import java.io.File;
 import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingQueue;
 
 /**
  * Created by pavel on 20/09/2017.
  */
 public class Bank {
 
-   static BlockingQueue<String> queue = null;
+   static BlockingQueue<String> queue = new LinkedBlockingQueue<>();
 
     static int count = 0;
-
 
     public void setQueue(BlockingQueue<String> queue) {
         Bank.queue = queue;
     }
 
-
     public void setCount(int count) {
         Bank.count = count;
     }
 
-    public int getCount() {
+    public int getCount() {return count;}
 
-        return count;
-    }
-
-    public BlockingQueue<String> getQueue() {
-
-        return queue;
-    }
+    public BlockingQueue<String> getQueue() {return queue;  }
 
 
 

@@ -10,7 +10,13 @@ import java.util.concurrent.BlockingQueue;
 public class MyConsumer extends Thread {
 
     Bank bank = new Bank();
-    int countLocal;
+   static int countLocal;
+    int count;
+
+    public int getCount() {
+        this.count = countLocal;
+        return this.count;
+    }
 
     char litera;
 
@@ -20,31 +26,26 @@ public class MyConsumer extends Thread {
 
     @Override
     public void run() {
-
-        System.out.println("test0");
-        System.out.println(bank.getQueue().size());
-
-        for (int i = 0; i < bank.getQueue().size(); i++) {
+        String s = null;
+        MyProducer pr = new MyProducer(new File("D:\\games\\ForTest\\"));
+       for (int i = 0; i < bank.getQueue().size(); i++) {
             try {
-                System.out.println("test000");
-                File file = new File(String.valueOf((bank.getQueue().take())));
+                BufferedReader reader = new BufferedReader(new FileReader(pr.getQueue().take()));
 
-                System.out.println("test1");
-                BufferedReader reader = new BufferedReader(new FileReader(file));
-                System.out.println("test2");
-                String s = reader.readLine();
-                while (s!=null) {
+                while ((s = reader.readLine()) != null) {
                     char[] ch = s.toCharArray();
-                    for (int i1 = 0; i1 < ch.length; i1++) {
-                        if (ch[i] == litera)
-                        {
-                            countLocal = bank.getCount();
+
+                    for (char c: ch) {
+                      //  System.out.print(c);
+                        if (c == litera)
+                        {  countLocal++;
+                          // System.out.println(countLocal);
+                           // countLocal = bank.getCount();
                             bank.setCount(countLocal++);
                         }
                     }
-
-
                 }
+
 
             } catch (InterruptedException e) {
                 e.printStackTrace();
@@ -53,7 +54,7 @@ public class MyConsumer extends Thread {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
+       }
 
     }
 }

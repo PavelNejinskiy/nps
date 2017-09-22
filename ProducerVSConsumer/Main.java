@@ -14,25 +14,31 @@ public class Main {
 
     public static void main(String[] args) throws FileNotFoundException, InterruptedException {
 
-         BlockingQueue<String> bQ = new ArrayBlockingQueue<String>(10);
-
         File dir = new File("D:\\games\\ForTest\\");
 
-        char letter = 'n';
+        char letter = 'a';
 
         Bank read = new Bank();
 
         MyProducer producer = new MyProducer(dir);
         producer.start();
 
-//        Thread.sleep(5000);
+       Thread.sleep(1000); // Без этого не работает ...
 
-//        MyConsumer consumer1 = new MyConsumer(litera);
-//        MyConsumer consumer2 = new MyConsumer(litera);
-//        consumer1.start();
-//        consumer2.start();
+        MyConsumer consumer1 = new MyConsumer(letter);
+        MyConsumer consumer2 = new MyConsumer(letter);
+        MyConsumer consumer3 = new MyConsumer(letter);
+        consumer1.start();
+        consumer2.start();
+        consumer3.start();
 
-        System.out.println(read.getCount());
+
+        int i = 0;
+        while(i < 5){
+            System.out.println(read.count);
+            i++;
+            Thread.sleep(600);
+        }
 
     }
 }
