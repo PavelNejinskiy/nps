@@ -12,7 +12,7 @@ public class Main {
 
     static BlockingQueue<String> queue = null;
 
-    public static void main(String[] args) throws FileNotFoundException, InterruptedException {
+    public static void main(String[] args) throws Exception {
 
         File dir = new File("D:\\games\\ForTest\\");
 
@@ -25,12 +25,19 @@ public class Main {
 
        Thread.sleep(1000); // Без этого не работает ...
 
-        MyConsumer consumer1 = new MyConsumer(letter);
-        MyConsumer consumer2 = new MyConsumer(letter);
-        MyConsumer consumer3 = new MyConsumer(letter);
-        consumer1.start();
-        consumer2.start();
-        consumer3.start();
+//        MyConsumer consumer1 = new MyConsumer(letter);
+//        MyConsumer consumer2 = new MyConsumer(letter);
+//        MyConsumer consumer3 = new MyConsumer(letter);
+//        consumer1.start();
+//        consumer2.start();
+//        consumer3.start();
+
+
+//        MyExecutorService myService = new MyExecutorService(letter);
+//        myService.fabrica();
+
+        MyCallable callable = new MyCallable(letter);
+        callable.call();
 
 
         int i = 0;
