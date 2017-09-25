@@ -23,7 +23,7 @@ public class Main {
         MyProducer producer = new MyProducer(dir);
         producer.start();
 
-       Thread.sleep(1000); // Без этого не работает ...
+   //    Thread.sleep(1000); // Без этого не работает ... Теперь работает без этого :) 
 
 //        MyConsumer consumer1 = new MyConsumer(letter);
 //        MyConsumer consumer2 = new MyConsumer(letter);
@@ -32,12 +32,12 @@ public class Main {
 //        consumer2.start();
 //        consumer3.start();
 
+//
+        MyExecutorService myService = new MyExecutorService(letter);
+        myService.fabrica();
 
-//        MyExecutorService myService = new MyExecutorService(letter);
-//        myService.fabrica();
-
-        MyCallable callable = new MyCallable(letter);
-        callable.call();
+//        MyCallable callable = new MyCallable(letter);
+//        callable.call();
 
 
         int i = 0;

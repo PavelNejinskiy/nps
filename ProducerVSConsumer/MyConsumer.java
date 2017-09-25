@@ -26,20 +26,18 @@ public class MyConsumer extends Thread {
     @Override
     public void run() {
         String s = null;
-        MyProducer pr = new MyProducer(new File("D:\\games\\ForTest\\"));
-       for (int i = 0; i < pr.getQueue().size(); i++) {
+
+       for (int i = 0; i < bank.getQueue().size(); i++) {
             try {
-                BufferedReader reader = new BufferedReader(new FileReader(pr.getQueue().take()));
+                BufferedReader reader = new BufferedReader(new FileReader(bank.getQueue().take()));
 
                 while ((s = reader.readLine()) != null) {
                     char[] ch = s.toCharArray();
 
                     for (char c: ch) {
-                      //  System.out.print(c);
+
                         if (c == litera)
                         {  countLocal++;
-                          // System.out.println(countLocal);
-                           // countLocal = bank.getCount();
                             bank.setCount(countLocal++);
                         }
                     }

@@ -31,11 +31,10 @@ public class MyExecutorService extends Thread {
             public void run() {
 
                 String s = null;
-                MyProducer pr = new MyProducer(new File("D:\\games\\ForTest\\"));
 
                 while (true){
                     try {
-                        BufferedReader reader = new BufferedReader(new FileReader(pr.getQueue().take()));
+                        BufferedReader reader = new BufferedReader(new FileReader(bank.getQueue().take()));
 
                         while ((s = reader.readLine()) != null) {
                             char[] ch = s.toCharArray();
@@ -57,7 +56,7 @@ public class MyExecutorService extends Thread {
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-                if (pr.getQueue().size() == 0) break;}
+                if (bank.getQueue().size() == 0) break;}
             }
 
         });    service.shutdown();
