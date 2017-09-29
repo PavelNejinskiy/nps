@@ -8,11 +8,11 @@ public class Main {
 
     public static void main(String[] args) throws Exception {
 
-
-        JSONServer server = new JSONServer();
-        server.serverStart();
-
-        Thread.sleep(1000);
+//
+//        JSONServer server = new JSONServer();
+//        server.serverStart();
+//
+//        Thread.sleep(1000);
 
 
         long time1 = System.currentTimeMillis();
