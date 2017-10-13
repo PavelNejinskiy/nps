@@ -1,6 +1,7 @@
 package ATM;
 
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 /**
@@ -8,28 +9,28 @@ import java.util.Map;
  */
 public class BankR {
 
-   private static Map<Integer, Integer> money = new HashMap();
+   private static Map<Integer, Integer>   note = new LinkedHashMap<>();
 
-    public void setMoney(int key, int money) {
+    public void setNote(int key, int note) {
 
-        this.money.put(key, money);
+        this.  note.put(key, note);
     }
 
-    public Map getMoney() {
+    public Map getNote() {
 
-        return money;
+        return note;
     }
 
     void addMoneyInBankomat()
     {
-      money.put(500, 100);
-      money.put(200, 100);
-      money.put(100, 100);
-      money.put(50, 100);
-      money.put(20, 100);
-      money.put(10, 100);
-      money.put(5, 100);
-      money.put(2, 100);
-      money.put(1, 100);
+        note.put(500, 100);
+        note.put(200, 100);
+        note.put(100, 100);
+        note.put(50, 100);
+        note.put(20, 100);
+        note.put(10, 100);
+        note.put(5, 100);
+        note.put(2, 100);
+        note.put(1, 100);
     }
 }

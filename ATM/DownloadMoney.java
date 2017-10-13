@@ -21,16 +21,16 @@ public class DownloadMoney {
         int summ = col;
         int count = 0;
 
-        Iterator it = bank.getMoney().entrySet().iterator();
+        Iterator it = bank.getNote().entrySet().iterator();
 
         while (it.hasNext()) {
             Map.Entry pair = (Map.Entry) it.next();
 
 
-            if (summ / (int) pair.getKey() > 0 && (int) pair.getValue() > summ / (int) pair.getKey()) {
-                temp = summ / (int) pair.getKey();
-                bank.setMoney((int) pair.getKey(), (int) pair.getValue() - temp);
-                summ = summ - temp * (int) pair.getKey();
+            if (summ / (Integer) pair.getKey() > 0 && (Integer) pair.getValue() > summ / (Integer) pair.getKey()) {
+                temp = summ / (Integer) pair.getKey();
+                bank.setNote((Integer) pair.getKey(), (int) pair.getValue() - temp);
+                summ = summ - temp * (Integer) pair.getKey();
 
                 mass[count] = temp;
             }
