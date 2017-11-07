@@ -26,7 +26,7 @@ public class Parser {
         }
     }
 
-    public String getContentWithoutUnicode() throws IOException {
+    public String getContentWithoutUnicode() {
 
         BufferedReader reader;
         try {
@@ -45,7 +45,7 @@ public class Parser {
         }
     }
 
-    public void saveContent(String content) throws IOException {
+    public void saveContent(String content)  {
         BufferedWriter bufferedWriter = null;
 
         try {
