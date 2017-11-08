@@ -19,15 +19,15 @@ public class DataSourcegetWithoutUnicode extends FileDataSource {
 
 
             String output = super.getContent();
-            String rezult = "";
+            String result = "";
         for (int i = 0; i < output.length(); i++) {
             int data = output.charAt(i);
             if (data < 0x80) {
-                rezult += (char)data;
+                result += (char)data;
             }
 
         }
-         return rezult;
+         return result;
 
     }
 }
