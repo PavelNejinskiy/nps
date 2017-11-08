@@ -26,25 +26,7 @@ public class FileDataSource extends DataSourceDecorator {
             return "Error";
         }
     }
-    @Override
-    public String getContentWithoutUnicode() {
-
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            String output = "";
-            int data;
-            while ((data = reader.read()) > 0) {
-                if (data < 0x80) {
-                    output += output;
-                }
-            }
-            return output;
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-            return "Error";
-        }
-    }
+  
     @Override
     public void saveContent(String content)  {
         BufferedWriter bufferedWriter = null;
