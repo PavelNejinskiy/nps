@@ -4,10 +4,6 @@ import java.io.*;
 
 public class FileDataSource extends DataSourceDecorator {
 
-    public FileDataSource(InterfaceParser wrapper) {
-        super(wrapper);
-    }
-
     public FileDataSource(File file) {
         super(file);
     }
