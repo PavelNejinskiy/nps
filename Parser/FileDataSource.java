@@ -4,19 +4,12 @@ import java.io.*;
 
 public class FileDataSource extends DataSourceDecorator {
 
-    private File file;
-    
-   public FileDataSource(InterfaceParser wrapper, File file) {
+    public FileDataSource(InterfaceParser wrapper) {
         super(wrapper);
-        this.file = file;
-    }  
-
-    public synchronized void setFile(File file) {
-        this.file = file;
     }
 
-    public synchronized File getFile() {
-        return file;
+    public FileDataSource(File file) {
+        super(file);
     }
 
   @Override
