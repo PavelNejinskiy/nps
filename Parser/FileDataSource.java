@@ -2,9 +2,13 @@ package Parser;
 
 import java.io.*;
 
-public class FileDataSource implements InterfaceParser {
+public class FileDataSource extends DataSourceDecorator {
 
     private File file;
+    
+      public FileDataSource(InterfaceParser wrapper) {
+        super(wrapper);
+    }
 
     public synchronized void setFile(File file) {
         this.file = file;
