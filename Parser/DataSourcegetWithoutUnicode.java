@@ -10,27 +10,24 @@ import java.io.IOException;
  */
 public class DataSourcegetWithoutUnicode extends FileDataSource {
 
-     public DataSourcegetWithoutUnicode(InterfaceParser wrapper) {
+  public DataSourcegetWithoutUnicode(InterfaceParser wrapper) {
         super(wrapper);
     }
+
     @Override
     public String getContent() {
 
-        BufferedReader reader;
-        try {
-            reader = new BufferedReader(new FileReader(file));
-            String output = "";
-            int data;
-            while ((output = reader.readLine()) != null) {
-                data = reader.read();
-                if (data < 0x80) {
-                    output += output;
-                }
+
+            String output = super.getContent();
+            String rezult = "";
+        for (int i = 0; i < output.length(); i++) {
+            int data = output.charAt(i);
+            if (data < 0x80) {
+                rezult += (char)data;
             }
-            return output;
-        } catch (IOException ex) {
-            System.out.println(ex.getMessage());
-            return "Error";
+
         }
+         return output;
+
     }
 }
