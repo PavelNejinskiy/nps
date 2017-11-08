@@ -6,6 +6,13 @@ package Parser;
 public class DataSourceDecorator implements InterfaceParser {
     
     private InterfaceParser wrapper;
+    
+       private File file;
+
+    public DataSourceDecorator(InterfaceParser wrapper, File file) {
+        this.wrapper = wrapper;
+        this.file = file;
+    }
 
     public DataSourceDecorator(InterfaceParser wrapper) {
         this.wrapper = wrapper;
