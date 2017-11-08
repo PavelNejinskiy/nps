@@ -6,9 +6,10 @@ public class FileDataSource extends DataSourceDecorator {
 
     private File file;
     
-      public FileDataSource(InterfaceParser wrapper) {
+   public FileDataSource(InterfaceParser wrapper, File file) {
         super(wrapper);
-    }
+        this.file = file;
+    }  
 
     public synchronized void setFile(File file) {
         this.file = file;
