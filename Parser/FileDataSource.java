@@ -4,8 +4,11 @@ import java.io.*;
 
 public class FileDataSource extends DataSourceDecorator {
 
+     private File file;
+
     public FileDataSource(File file) {
         super(file);
+        this.file = file;
     }
 
   @Override
