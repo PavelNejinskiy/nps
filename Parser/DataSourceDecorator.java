@@ -9,8 +9,7 @@ public class DataSourceDecorator implements InterfaceParser {
     
        private File file;
 
-    public DataSourceDecorator(InterfaceParser wrapper, File file) {
-        this.wrapper = wrapper;
+    public DataSourceDecorator(File file) {       
         this.file = file;
     }
 
