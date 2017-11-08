@@ -10,11 +10,8 @@ import java.io.IOException;
  */
 public class DataSourcegetWithoutUnicode extends FileDataSource {
 
-    private File file;
-
-    public DataSourcegetWithoutUnicode(File file) {
-        super(file);
-        this.file = file;
+     public DataSourcegetWithoutUnicode(InterfaceParser wrapper) {
+        super(wrapper);
     }
     @Override
     public String getContent() {
