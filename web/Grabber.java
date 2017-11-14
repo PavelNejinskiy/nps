@@ -30,7 +30,7 @@ public class Grabber {
             Elements urls = doc.body().getElementsByTag("a");
             for(Element url : urls)
             {
-                //... и вытаскиваем их название...
+                
                 System.out.println("\nhref Mayak <a> "+url.attr("href"));
 
             }
