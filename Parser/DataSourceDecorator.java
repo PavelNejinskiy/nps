@@ -24,11 +24,7 @@ public class DataSourceDecorator implements InterfaceParser {
     public String getContent() {
         return wrapper.getContent();
     }
-
-    @Override
-    public String getContentWithoutUnicode() {
-        return wrapper.getContentWithoutUnicode();
-    }
+ 
 
     @Override
     public void saveContent(String content) throws IOException {
