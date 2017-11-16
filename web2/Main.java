@@ -11,13 +11,9 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Links links = new Links();
+        Links links = new LinksFromSinglePage(new URL("http://www.tutorialspoint.com/"));
 
-        List<URL> list =  links.start(new URL("http://www.tutorialspoint.com/"));
-
-       // System.out.println(list.size());
-
-        for (URL url : list) {
+        for (URL url : links) {
            System.out.println(url);
         }
 
